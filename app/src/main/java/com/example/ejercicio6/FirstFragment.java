@@ -66,9 +66,8 @@ public class FirstFragment extends Fragment {
 
 
 
-        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView,
-                SecondFragment.newInstance( ""), "second").addToBackStack( null).commit();
+      //  getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView,
+             //  SecondFragment.newInstance( ""), "second").addToBackStack( null).commit();
 
 
-    }
-}
+

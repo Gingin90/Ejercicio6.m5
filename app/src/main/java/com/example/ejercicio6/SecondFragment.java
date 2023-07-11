@@ -63,10 +63,9 @@ public class SecondFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = FragmentSecondBinding.inflate(getLayoutInflater(), container, false);
-        FragmentManager fm = getActivity().getSupportFragmentManager();
-        fm.popBackStack();
+        //
+      //  FragmentManager fm = getActivity().getSupportFragmentManager();
+        //fm.popBackStack();
 
 
    // }
-//}//
