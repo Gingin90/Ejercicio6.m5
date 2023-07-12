@@ -15,6 +15,7 @@ import com.example.ejercicio6.databinding.FragmentFirstBinding;
 import com.example.ejercicio6.databinding.FragmentSecondBinding;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,7 +24,7 @@ import java.util.ArrayList;
  */
 public class FirstFragment extends Fragment {
     private FragmentFirstBinding binding;
-    List<Item> listItem= new ArrayList<>();
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -73,9 +74,9 @@ public class FirstFragment extends Fragment {
         View view = binding.getRoot();
         binding.btnNext.setOnClickListener(v -> {
 
-            private List <Item> returnItemList(){
+            List<String>listItem = new ArrayList<>();
 
-                Item item01 = new Item("Zhuo Chengyou","https://unsplash.com/photos/UBvtBr_FmrY/download?force=true&w=6 40");
+                Item item01 = new Item("ZhuoChengyou","https://unsplash.com/photos/UBvtBr_FmrY/download?force=true&w=6 40");
                 listItem.add(item01);
                 Item item02 = new Item("billow926","https://unsplash.com/photos/pNoP-qVwBFQ/download?force=true&w=640");
                 listItem.add(item02);
@@ -100,7 +101,7 @@ public class FirstFragment extends Fragment {
                 Item item12 = new Item("Wesley Armstrong","https://unsplash.com/photos/q0wqYpyWDpc/download?force=tr ue&w=640");
                 listItem.add(item12);
                 return listItem;
-            }
+            });
 
             Adapter adapter =new Adapter();
 
