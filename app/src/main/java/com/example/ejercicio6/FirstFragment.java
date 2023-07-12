@@ -73,6 +73,8 @@ public class FirstFragment extends Fragment {
         binding = FragmentFirstBinding.inflate(getLayoutInflater(), container, false);
         View view = binding.getRoot();
         binding.btnNext.setOnClickListener(v -> {
+            Adapter adapter =new Adapter();
+            binding.recyclerView.setAdapter(adapter);
 
             List<String>listItem = new ArrayList<>();
 
@@ -103,9 +105,6 @@ public class FirstFragment extends Fragment {
                 return listItem;
             });
 
-            Adapter adapter =new Adapter();
-
-            binding.recyclerView.setAdapter(adapter);
         return binding.getRoot();
 
 

@@ -7,10 +7,12 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Adapter extends RecyclerView.Adapter {
 
     private ArrayList <Image>  imagen =new ArrayList<>();
+
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -23,7 +25,6 @@ public class Adapter extends RecyclerView.Adapter {
     }
 
     @Override
-    public int getItemCount() {
-        return 0;
+    public int getItemCount() {return list.size();
     }
 }
