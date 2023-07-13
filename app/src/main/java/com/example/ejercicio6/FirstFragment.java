@@ -1,18 +1,14 @@
 package com.example.ejercicio6;
 
-import android.content.ClipData;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.ejercicio6.databinding.FragmentFirstBinding;
-import com.example.ejercicio6.databinding.FragmentSecondBinding;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -72,37 +68,48 @@ public class FirstFragment extends Fragment {
         // Inflate the layout for this fragment
         binding = FragmentFirstBinding.inflate(getLayoutInflater(), container, false);
         View view = binding.getRoot();
+
+
+
+       // public void setData(){
+           // adapter.setData(getData());
+
+           // public void addData(){
+                //data.add("word "+ String.valueOf(data.size()));
+           // this.infoAdapter.notifyItemInserted(data.size());
+
+
         binding.btnNext.setOnClickListener(v -> {
             Adapter adapter =new Adapter();
             binding.recyclerView.setAdapter(adapter);
 
             List<String>listItem = new ArrayList<>();
 
-                Item item01 = new Item("ZhuoChengyou","https://unsplash.com/photos/UBvtBr_FmrY/download?force=true&w=6 40");
-                listItem.add(item01);
-                Item item02 = new Item("billow926","https://unsplash.com/photos/pNoP-qVwBFQ/download?force=true&w=640");
-                listItem.add(item02);
-                Item item03 = new Item("Philipp Deiß","https://unsplash.com/photos/LfJx0gqqiEc/download?force=true&w=64 0");
-                listItem.add(item03);
-                Item item04 = new Item("Huper by Joshua Earle","https://unsplash.com/photos/_p8gVNNsWw4/download?force=true& w=640");
-                listItem.add(item04);
-                Item item05 = new Item("Melnychuk Nataliya","https://unsplash.com/photos/rnPGCe7LsQo/download?force=true &w=640");
-                listItem.add(item05);
-                Item item06 = new Item("Teagan Maddux","https://unsplash.com/photos/k2DbTXQ0yrQ/download?force=true &w=640");
-                listItem.add(item06);
-                Item item07 = new Item("Chen Liu","https://unsplash.com/photos/kZH8X0q4Nvo/download?force=true&w=6 40");
-                listItem.add(item07);
-                Item item08 = new Item("John Fornander","https://unsplash.com/photos/iNqJx- VOceI/download?force=true&w=640");
-                listItem.add(item08);
-                Item item09 = new Item("Parker Coffman","https://unsplash.com/photos/mNWrQ9O6KZw/download?force=tr ue&w=640");
-                listItem.add(item09);
-                Item item10 = new Item("XPS","https://unsplash.com/photos/8pb7Hq539Zw/download?force=tru e&w=640");
-                listItem.add(item10);
-                Item item11 = new Item("Daniel J. Schwarz","https://unsplash.com/photos/l8BvDmt8Ac4/download?force=true& w=640");
-                listItem.add(item11);
-                Item item12 = new Item("Wesley Armstrong","https://unsplash.com/photos/q0wqYpyWDpc/download?force=tr ue&w=640");
-                listItem.add(item12);
-                return listItem;
+                Image image01 = new Image("ZhuoChengyou","https://unsplash.com/photos/UBvtBr_FmrY/download?force=true&w=6 40");
+                listItem.add(image01.toString());
+                Image image02 = new Image("billow926","https://unsplash.com/photos/pNoP-qVwBFQ/download?force=true&w=640");
+                listItem.add(image02.toString());
+                Image image03 = new Image("Philipp Deiß","https://unsplash.com/photos/LfJx0gqqiEc/download?force=true&w=64 0");
+                listItem.add(image03.toString());
+                Image image04 = new Image("Huper by Joshua Earle","https://unsplash.com/photos/_p8gVNNsWw4/download?force=true& w=640");
+                listItem.add(image04.toString());
+                Image image05 = new Image("Melnychuk Nataliya","https://unsplash.com/photos/rnPGCe7LsQo/download?force=true &w=640");
+                listItem.add(image05.toString());
+                Image image06 = new Image("Teagan Maddux","https://unsplash.com/photos/k2DbTXQ0yrQ/download?force=true &w=640");
+                listItem.add(image06.toString());
+                Image image07 = new Image("Chen Liu","https://unsplash.com/photos/kZH8X0q4Nvo/download?force=true&w=6 40");
+                listItem.add(image07.toString());
+                Image image08 = new Image("John Fornander","https://unsplash.com/photos/iNqJx- VOceI/download?force=true&w=640");
+                listItem.add(image08.toString());
+                Image image09 = new Image("Parker Coffman","https://unsplash.com/photos/mNWrQ9O6KZw/download?force=tr ue&w=640");
+                listItem.add(image09.toString());
+                Image image10 = new Image("XPS","https://unsplash.com/photos/8pb7Hq539Zw/download?force=tru e&w=640");
+                listItem.add(image10.toString());
+                Image image11 = new Image("Daniel J. Schwarz","https://unsplash.com/photos/l8BvDmt8Ac4/download?force=true& w=640");
+                listItem.add(image11.toString());
+                Image image12 = new Image("Wesley Armstrong","https://unsplash.com/photos/q0wqYpyWDpc/download?force=tr ue&w=640");
+                listItem.add(image12.toString());
+
             });
 
         return binding.getRoot();

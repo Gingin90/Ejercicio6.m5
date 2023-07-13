@@ -8,9 +8,9 @@
     tools:context=".SecondFragment">
 
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="391dp"
-        android:layout_height="239dp"
+        android:id="@+id/imageView"
+        android:layout_width="412dp"
+        android:layout_height="314dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="4dp"
         app:layout_constraintStart_toStartOf="parent"

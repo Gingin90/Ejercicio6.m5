@@ -1,30 +1,59 @@
 package com.example.ejercicio6;
 
-import android.media.Image;
+import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.example.ejercicio6.databinding.ItemBinding;
+
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Adapter extends RecyclerView.Adapter {
+public class Adapter extends RecyclerView.Adapter  <Adapter.ViewHolder>{
 
-    private ArrayList <Image>  imagen =new ArrayList<>();
+        private ArrayList<Image> images =new ArrayList<>();
+        @NonNull
+        @Override
+        public Adapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            ItemBinding binding = ItemBinding.inflate(LayoutInflater.from(parent.getContext()));
+            return new ViewHolder(binding);
+        }
 
-    @NonNull
-    @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        @Override
+        public void onBindViewHolder(@NonNull Adapter.ViewHolder holder, int position) {
+            Image item = images.get(position);
+            holder.showData(item.toString());
+        }
+
+        @Override
+        public int getItemCount() {
+            return images.size();
+        }
+    public void setData(List<String> data) {
+        this.images = images;
     }
 
-    @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
 
-    }
 
-    @Override
-    public int getItemCount() {return list.size();
-    }
+      //  public class ViewHolder extends RecyclerView.ViewHolder {
+           //*  private  imageBinding;
+           // public ViewHolder(@NonNull ItemBinding binding) {
+              //  super(binding.getRoot());
+              //  imageBinding = binding;
+            }
+           /// public void showData(Image image){imageBinding.imageView.setImageUri("URL");
+
+            //  Glide.with(itemBinding.()).l(item).into(newbinding.imageView);
+            //  public void setImages(Image items);*//
+          //  }
+      //  }//
+
+
+
+//}//
+
 }
