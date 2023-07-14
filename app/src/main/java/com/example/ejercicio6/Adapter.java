@@ -38,22 +38,22 @@ public class Adapter extends RecyclerView.Adapter  <Adapter.ViewHolder>{
     }
 
 
-
-      //  public class ViewHolder extends RecyclerView.ViewHolder {
-           //*  private  imageBinding;
-           // public ViewHolder(@NonNull ItemBinding binding) {
-              //  super(binding.getRoot());
-              //  imageBinding = binding;
-            }
-           /// public void showData(Image image){imageBinding.imageView.setImageUri("URL");
-
-            //  Glide.with(itemBinding.()).l(item).into(newbinding.imageView);
-            //  public void setImages(Image items);*//
-          //  }
-      //  }//
+       public class ViewHolder extends RecyclerView.ViewHolder {
+           private  ItemBinding itemBinding;
+           public ViewHolder(@NonNull ItemBinding binding) {
+               super(binding.getRoot());
+               itemBinding = binding;
+           }
+             public void showData(String image) {
 
 
+                 Glide.with(itemBinding.getRoot()).load(image).into(itemBinding.imageView2);
+             }
 
-//}//
+
+        }
+
+
 
 }
+
