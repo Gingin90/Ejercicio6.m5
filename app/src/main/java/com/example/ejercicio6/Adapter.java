@@ -1,39 +1,37 @@
 package com.example.ejercicio6;
 
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.bumptech.glide.Glide;
 import com.example.ejercicio6.databinding.ItemBinding;
-
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Adapter extends RecyclerView.Adapter  <Adapter.ViewHolder>{
 
-        private ArrayList<Image> images =new ArrayList<>();
+        private List<Image> images;
         @NonNull
         @Override
-        public Adapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            ItemBinding binding = ItemBinding.inflate(LayoutInflater.from(parent.getContext()));
+        public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            ItemBinding binding = ItemBinding.inflate(LayoutInflater.from(parent.getContext()),parent,false);
             return new ViewHolder(binding);
         }
 
         @Override
         public void onBindViewHolder(@NonNull Adapter.ViewHolder holder, int position) {
             Image item = images.get(position);
-            holder.showData(item.toString());
+            holder.showData(item);
         }
 
         @Override
         public int getItemCount() {
             return images.size();
         }
-    public void setData(List<String> data) {
+    public void setData(List<Image> images) {
         this.images = images;
     }
 
@@ -44,10 +42,17 @@ public class Adapter extends RecyclerView.Adapter  <Adapter.ViewHolder>{
                super(binding.getRoot());
                itemBinding = binding;
            }
-             public void showData(String image) {
+             public void showData( Image image) {
+              itemBinding.textView.setText(image.text);
 
 
-                 Glide.with(itemBinding.getRoot()).load(image).into(itemBinding.imageView2);
+                 Glide.with(itemBinding.getRoot()).load(image.url).into(itemBinding.imageView2);
+                 itemBinding.Constraint.setOnClickListener(v->{
+                     Bundle bundle = new Bundle();
+                     bundle.putString("nombre",image.text);
+                     bundle.putString("url",image.url);
+                     Navigation.findNavController(itemBinding.getRoot()).navigate(R.id.action_firstFragment_to_secondFragment,bundle);
+                 });
              }
 
 
