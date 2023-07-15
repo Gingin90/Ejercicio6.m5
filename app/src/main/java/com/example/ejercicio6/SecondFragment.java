@@ -44,8 +44,8 @@ public class SecondFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            mParam1 = getArguments().getString( "Url");
+            mParam2 = getArguments().getString("nombre");
         }
     }
 
@@ -53,16 +53,21 @@ public class SecondFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentSecondBinding.inflate(getActivity().getLayoutInflater(), container, false);
-        Glide.with(binding.getRoot()).load(mParam1).into(binding.imageView);
 
-            Bundle bundle = new Bundle();
-            bundle.putString("nombre", mParam2);
-            bundle.putString("url", mParam1);
-            Navigation.findNavController(binding.getRoot()).navigate(R.id.action_secondFragment_to_firstFragment, bundle);
+        Glide.with(getContext()).load(mParam1).into(binding.imageView);
+         binding.tV2.setText(mParam2);
+
+         binding.btnBack.setOnClickListener(v -> {
+
+
+             Navigation.findNavController(getView()).navigate(R.id.action_secondFragment_to_firstFragment);
+
+         });
+
             return binding.getRoot();
 
-        };
-    }
+
+    }}
 
 
 
