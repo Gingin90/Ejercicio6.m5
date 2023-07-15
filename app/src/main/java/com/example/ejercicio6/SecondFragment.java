@@ -58,7 +58,7 @@ public class SecondFragment extends Fragment {
             Bundle bundle = new Bundle();
             bundle.putString("nombre", mParam2);
             bundle.putString("url", mParam1);
-            Navigation.findNavController(binding.getRoot()).navigate(R.id.action_firstFragment_to_secondFragment, bundle);
+            Navigation.findNavController(binding.getRoot()).navigate(R.id.action_secondFragment_to_firstFragment, bundle);
             return binding.getRoot();
 
         };
